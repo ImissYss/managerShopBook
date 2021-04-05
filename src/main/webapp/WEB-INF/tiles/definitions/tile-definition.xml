@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name="baseLayout" template="/WEB-INF/tiles/template/baseLayout.jsp">
+        <put-attribute name="title" value="Title"/>
+        <put-attribute name="heading" value=""/>
+        <put-attribute name="tagline" value="" />
+        <put-attribute name="sidebar" value="/WEB-INF/tiles/template/sidebar.jsp" />
+        <put-attribute name="navigation" value="/WEB-INF/tiles/template/navigation.jsp" />
+        <put-attribute name="content" value="" />
+        <put-attribute name="footer" value="/WEB-INF/tiles/template/footer.jsp" />
+
+    </definition>
+    <definition name="home" extends="baseLayout">
+        <put-attribute name="title" value="Products"/>
+        <put-attribute name="heading" value="Products"/>
+        <put-attribute name="tagline" value="add products"/>
+        <put-attribute name="content" value="/WEB-INF/views/home.jsp"/>
+    </definition>
+
+    <definition name="foo" extends="baseLayout">
+        <put-attribute name="content" value="/WEB-INF/views/foo.jsp"/>
+    </definition>
+
+    <definition name="admin" extends="baseLayout">
+        <put-attribute name="content" value="/WEB-INF/views/admin.jsp" />
+    </definition>
+
+    <definition name="login" extends="baseLayout">
+        <put-attribute name="content" value="/WEB-INF/views/login.jsp" />
+    </definition>
+
+    <definition name="signup" extends="baseLayout">
+        <put-attribute name="content" value="/WEB-INF/views/signup.jsp" />
+    </definition>
+
+    <definition name="addAuthor" extends="baseLayout">
+        <put-attribute name="content" value="/WEB-INF/views/addAuthor.jsp" />
+    </definition>
+
+    <definition name="listAuthor" extends="baseLayout">
+        <put-attribute name="content" value="/WEB-INF/views/listAuthor.jsp" />
+        <put-attribute name="urlPage" value="/authors" cascade="true" />
+        <put-attribute name="pagination" value="/WEB-INF/tiles/template/pagination.jsp" cascade="true" />
+    </definition>
+
+    <definition name="authorInfo" extends="baseLayout">
+        <put-attribute name="content" value="/WEB-INF/views/authorInfo.jsp" />
+    </definition>
+
+    <definition name="addTag" extends="baseLayout">
+        <put-attribute name="content" value="/WEB-INF/views/addTag.jsp" />
+    </definition>
+
+    <definition name="tag" extends="baseLayout">
+        <put-attribute name="content" value="/WEB-INF/views/tag.jsp" />
+    </definition>
+
+    <definition name="addCat" extends="baseLayout">
+        <put-attribute name="content" value="/WEB-INF/views/addCat.jsp" />
+    </definition>
+
+    <definition name="cat" extends="baseLayout">
+        <put-attribute name="content" value="/WEB-INF/views/cat.jsp" />
+    </definition>
+
+    <definition name="addBook" extends="baseLayout">
+        <put-attribute name="content" value="/WEB-INF/views/addBook.jsp" />
+    </definition>
+
+    <definition name="book" extends="baseLayout">
+        <put-attribute name="content" value="/WEB-INF/views/book.jsp" />
+    </definition>
+
+    <definition name="books" extends="baseLayout">
+        <put-attribute name="content" value="/WEB-INF/views/books.jsp" />
+        <put-attribute name="urlPage" value="/books" cascade="true" />
+        <put-attribute name="pagination" value="/WEB-INF/tiles/template/pagination.jsp" cascade="true" />
+    </definition>
+
+    <definition name="addReview" extends="baseLayout">
+        <put-attribute name="content" value="/WEB-INF/views/addReview.jsp" />
+    </definition>
+
+    <definition name="reviews" extends="baseLayout">
+        <put-attribute name="content" value="/WEB-INF/views/reviews.jsp" />
+        <put-attribute name="urlPage" value="/reviews" cascade="true" />
+        <put-attribute name="pagination" value="/WEB-INF/tiles/template/pagination.jsp" cascade="true" />
+    </definition>
+
+    <definition name="review" extends="baseLayout">
+        <put-attribute name="content" value="/WEB-INF/views/review.jsp" />
+    </definition>
+
+    <definition name="user" extends="baseLayout">
+        <put-attribute name="content" value="/WEB-INF/views/user.jsp" />
+    </definition>
+
+    <definition name="edituser" extends="baseLayout">
+        <put-attribute name="content" value="/WEB-INF/views/edituser.jsp" />
+    </definition>
+
+    <definition name="changePassword" extends="baseLayout">
+        <put-attribute name="content" value="/WEB-INF/views/changePassword.jsp" />
+    </definition>
+
+    <definition name="users" extends="baseLayout">
+        <put-attribute name="content" value="/WEB-INF/views/users.jsp" />
+        <put-attribute name="urlPage" value="/admin/users" cascade="true" />
+        <put-attribute name="pagination" value="/WEB-INF/tiles/template/pagination.jsp" cascade="true" />
+    </definition>
+
+    <definition name="adminPanel" extends="baseLayout">
+        <put-attribute name="content" value="/WEB-INF/views/adminPanel.jsp" />
+    </definition>
+
+    <definition name="searchBook" extends="baseLayout">
+        <put-attribute name="content" value="/WEB-INF/views/searchBook.jsp" />
+        <put-attribute name="urlPage" value="/books/search" cascade="true" />
+        <put-attribute name="pagination" value="/WEB-INF/tiles/template/pagination.jsp" cascade="true" />
+    </definition>
+
+    <definition name="searchReviews" extends="baseLayout">
+        <put-attribute name="content" value="/WEB-INF/views/searchReviews.jsp" />
+        <put-attribute name="urlPage" value="/reviews/search" cascade="true" />
+        <put-attribute name="pagination" value="/WEB-INF/tiles/template/pagination.jsp" cascade="true" />
+    </definition>
+
+    <definition name="searchAuthors" extends="baseLayout">
+        <put-attribute name="content" value="/WEB-INF/views/searchAuthors.jsp" />
+        <put-attribute name="urlPage" value="/authors/search" cascade="true" />
+        <put-attribute name="pagination" value="/WEB-INF/tiles/template/pagination.jsp" cascade="true" />
+    </definition>
+
+    <definition name="accessDenied" extends="baseLayout">
+        <put-attribute name="content" value="/WEB-INF/views/accessDenied.jsp" />
+    </definition>
+
+    <definition name="404" extends="baseLayout">
+        <put-attribute name="content" value="/WEB-INF/views/404.jsp" />
+    </definition>
+    <definition name="shoppingCart" extends="baseLayout">
+        <put-attribute name="content" value="/WEB-INF/views/shoppingCart.jsp"/>
+    </definition>
+    <definition name="checkCart" extends="baseLayout">
+        <put-attribute name="content" value="/WEB-INF/views/checkCart.jsp"/>
+    </definition>
+    <definition name="editAddress" extends="baseLayout">
+        <put-attribute name="content" value="/WEB-INF/views/editAddress.jsp"/>
+    </definition>
+    <definition name="yourCart" extends="baseLayout">
+        <put-attribute name="content" value="/WEB-INF/views/yourCart.jsp"/>
+    </definition>
+</tiles-definitions>

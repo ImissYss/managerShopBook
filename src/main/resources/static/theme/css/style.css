@@ -1,0 +1,487 @@
+body {
+    padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+    body {
+        padding-top: 56px;
+    }
+}
+
+#sidebar.mobile-sidebar {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    height: calc(100% - 56px);
+    top: 56px;
+    background: #fff;
+    overflow-y: scroll;
+    transform: translateX(-101%);
+    transition: .3s all ease-out;
+}
+
+#sidebar.active {
+    transform: translateX(0);
+}
+
+#toggleSidebarBtn {
+    font-size: 26px;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+    #sidebar {
+        display: none;
+    }
+
+
+}
+#authorList {
+    width: 100%;
+
+}
+
+#authorList .author {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    padding: 5px 5px;
+}
+
+#authorList .author .name {
+    width: 100%;
+}
+
+#authorList .author .action {
+    width: 100px;
+    text-align: right;
+}
+
+#newAuthorForm {
+    display: none;
+}
+
+.sidebar-list ul {
+    list-style: none;
+    padding-left: 30px;
+}
+section.books {
+}
+
+
+section.books .book_main_list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+section.books .book_main_list .book {
+    position:relative;
+    width:23%;
+    height:260px;
+    margin:1%;
+    box-sizing: border-box;
+    transition: transform .4s;
+}
+section.books .book_main_list .book:hover  {
+    transform:scale(1.15);
+    transition: transform .8s;
+    z-index:10;
+}
+section.books .book_main_list .book:hover .cover{
+    transition: transform 1.1s;
+
+}
+
+section.books .book_main_list .book .cover{
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width:100%;
+    height:100%;
+}
+section.books .book_main_list .book .info{
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius:2px;
+    background-color:rgba(0,0,0,0.6);
+    visibility:hidden;
+    opacity:0;
+    transition: all 1s;
+}
+section.books .book_main_list .book:hover .info{
+    visibility:visible;
+    opacity:1;
+    cursor:pointer;
+
+}
+
+section.books .book_main_list .book:hover .info h5{
+    transform: translateY(0px);
+    opacity:1;
+
+}
+section.books .book_main_list .book .info h5{
+    font-size:16px;
+
+    color:#fff;
+    position:absolute;
+    top: 0;
+    padding-top:20px;
+    transform: translateY(-50px);
+    opacity:0;
+    transition: all .9s;
+    text-align: center;
+    width: 100%;
+
+}
+section.books .book_main_list .book:hover .info .author{
+    transform: translateY(0px);
+    opacity:1;
+}
+
+
+section.books .book_main_list .book .info .author{
+    font-size:14px;
+
+    color:#fff;
+    position:absolute;
+    bottom: 0;
+    padding-bottom:20px;
+    transform: translateY(50px);
+    opacity:0;
+    transition: all .9s;
+    text-align: center;
+    width: 100%;
+
+}
+section.books .book_main_list .book:hover .info .stars{
+    opacity:1;
+}
+
+section.books .book_main_list .book .info .stars{
+    font-size:20px;
+    color:#fff;
+    position:absolute;
+    top: calc(50% - 20px);;
+    left:0;
+    right: 0;
+    opacity:0;
+    transition: all .9s;
+    text-align: center;
+}
+
+
+section.books .book_main_list .book .cover .back{
+
+    border-radius:2px;
+}
+
+
+.book-cover {
+    max-width: 250px;
+}
+
+
+/* --------- section.book_review ----------- */
+
+
+
+section.book_review .review {
+    display: flex;
+    flex-direction: column;
+    /*	border: 1px solid #e5e5e5;
+        border-width:0px 0px 1px 0px;*/
+    padding: 20px 20px 10px;
+    transition: all 0.3s;
+    margin-bottom: 20px;
+    border:1px solid rgba(0, 0, 0, 0.1);
+}
+
+section.book_review .review-top {
+    display: flex;
+    flex-direction: row;
+
+}
+section.book_review .review  a:hover{
+    text-decoration: none;
+}
+
+
+
+section.book_review  .review .review_info {
+    display: flex;
+    flex-direction: column;
+}
+
+section.book_review .review .review_info h4 {
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px 0;
+    color: #333;
+}
+section.book_review  .review .description {
+    width: 100%;
+    padding: 10px 0;
+}
+section.book_review .review .description p {
+    font-size: 14px;
+    text-align: justify;
+
+    color: #555;
+}
+section.book_review  .review .review_author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 5px;
+}
+section.book_review  .review .review_author .avatar {
+    width:190px;
+    height: 190px;
+    overflow: hidden;
+    text-align: center;
+}
+section.book_review  .review .review_author .avatar img {
+    height: 100%;
+}
+
+section.book_review .review-bottom {
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+    font-size: 13px;
+    color: #666;
+}
+
+section.book_review .review-bottom .review-author {
+    flex:1;
+}
+section.book_review .review-bottom .review-book-info {
+    flex:2;
+    text-align: right;
+}
+.vote-box {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.vote-box .vote-type {
+    flex-grow: 1;
+    margin: 0 10px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.vote-box .vote-type:last-of-type {
+    margin: 0px;
+}
+
+.vote-box .vote-type button {
+    width: 100%;
+}
+
+.vote-box .vote-type .vote-count {
+    font-size: 18px;
+    padding-bottom: 5px;
+    color: #28a745;
+}
+
+
+
+
+
+@media only screen and (max-width: 420px) {
+
+    .vote-box {
+        flex-direction: column;
+    }
+
+    .vote-box .vote-type {
+        margin: 0 0 10px 0;
+    }
+    .vote-box .vote-type:last-of-type {
+        margin-right: 0;
+    }
+
+
+}
+
+
+.page-nav {
+    padding: 10px 0;
+}
+
+.page-only-small-mobile {
+    display: none;
+}
+
+
+
+@media only screen and (max-width: 500px) {
+
+    .page-only-small-mobile {
+        display: block;
+    }
+
+
+}
+@media only screen and (max-width: 1200px)  {
+
+    section.books .book_main_list .book {
+        width:31%;
+        height:255px;
+        margin:1%;
+    }
+
+
+}
+
+@media only screen and (max-width: 1000px)  {
+
+    section.books .book_main_list .book {
+        width:31%;
+        height:225px;
+        margin:1%;
+    }
+
+
+}
+
+@media only screen and (max-width: 700px)  {
+
+
+    section.books .book_main_list .book {
+        width:31%;
+        height:215px;
+        margin:3%;
+    }
+
+
+}
+
+
+@media only screen and (max-width: 580px)  {
+
+
+    section.books .book_main_list .book {
+        width:44%;
+        height:270px;
+        margin:3%;
+    }
+
+
+}
+
+
+
+
+
+@media only screen and (max-width: 400px) {
+
+
+    section.books .book_main_list .book {
+        width: 44%;
+        height: 220px;
+        margin: 3%;
+    }
+
+
+}
+/* --------- RDM  REVIEW----------- */
+
+
+@media only screen and (max-width: 1000px)  {
+
+
+    section.book_review .review_wrap .review-top {
+        flex-direction: column-reverse;
+
+    }
+
+    section.book_review .review_wrap .review .review_info {
+        width: 100%;
+    }
+
+    section.book_review .review_wrap .review .review_author {
+        width: 100%;
+    }
+
+
+    section.book_review .review_wrap .review-bottom {
+        flex-direction: column;
+    }
+
+    section.book_review .review_wrap .review-bottom .review-book-info {
+        text-align: left;
+    }
+
+    section.book_review .review-bottom {
+        padding-top:0;
+    }
+
+}
+
+@media only screen and (max-width: 480px)  {
+
+
+    section.book_review .review_wrap .review .review_info h4 {
+        font-size: 20px;
+
+    }
+    section.book_review .review_wrap .review .description p {
+        font-size: 14px;
+    }
+
+    section.book_review .review_wrap .review .review_author .avatar {
+        width:150px;
+        height: 150px;
+    }
+
+    section.book_review .review_wrap .review .review_author h4 {
+        font-size: 18px;
+    }
+
+}
+
+/* --------- Comment----------- */
+
+
+#comments .comment {
+    width: 100%;
+    padding: 15px 0;
+    border-bottom:1px solid #e7e7e7;
+}
+
+#comments .comment p {
+    width: 100%;
+    margin: 0;
+    maring-top:5px;
+}
+
+#comments .comment span {
+    width: 100%;
+    font-size: 14px;
+    color:#555;
+}
+#comments .comment .data {
+    margin-left:10px;
+}
+
+#moreComments {
+    text-align: center;
+    margin: 10px auto;
+    display: block;
+    padding: 10px 20px;
+}
